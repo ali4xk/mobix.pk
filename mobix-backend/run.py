@@ -3,6 +3,9 @@ from app.models import User, Listing, ListingImage, Message, Review, Report
 
 app = create_app()
 
+with app.app_context():
+    db.create_all()
+
 @app.shell_context_processor
 def make_shell_context():
     return {
