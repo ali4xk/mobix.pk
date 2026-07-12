@@ -24,6 +24,9 @@ export default function Navbar() {
           {user ? (
             <>
               <Link to="/dashboard" className="navbar-link">Dashboard</Link>
+              <Link to="/messages" className="navbar-link">
+                <i className="ti ti-message" /> Messages
+              </Link>
               <Link to="/create-listing" className="btn-post">
                 <i className="ti ti-plus" />
                 Post a listing
