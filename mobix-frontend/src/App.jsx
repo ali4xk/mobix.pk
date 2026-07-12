@@ -7,6 +7,7 @@ import Login from './pages/Login'
 import Register from './pages/Register'
 import Dashboard from './pages/Dashboard'
 import CreateListing from './pages/CreateListing'
+import Messages from './pages/Messages'
 
 export default function App() {
   return (
@@ -20,6 +21,8 @@ export default function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/create-listing" element={<CreateListing />} />
+        <Route path="/messages" element={<Messages />} />
+        <Route path="/messages/:listingId/:userId" element={<Messages />} />
       </Routes>
     </>
   )
