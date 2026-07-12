@@ -122,6 +122,32 @@ def get_listings():
     }), 200
 
 
+@listings_bp.route("/my", methods=["GET"])
+@jwt_required()
+def get_my_listings():
+    user_id = get_jwt_identity()
+    listings = Listing.query.filter_by(user_id=user_id).order_by(Listing.created_at.desc()).all()
+
+    result = []
+    for listing in listings:
+        primary_image = ListingImage.query.filter_by(listing_id=listing.id, is_primary=True).first()
+        result.append({
+            "id": listing.id,
+            "title": listing.title,
+            "brand": listing.brand,
+            "model": listing.model,
+            "price": listing.price,
+            "condition": listing.condition,
+            "category": listing.category,
+            "city": listing.city,
+            "status": listing.status,
+            "image": primary_image.image_url if primary_image else None,
+            "created_at": listing.created_at.isoformat()
+        })
+
+    return jsonify({"listings": result}), 200
+
+
 @listings_bp.route("/<int:listing_id>", methods=["GET"])
 def get_listing(listing_id):
     listing = Listing.query.get_or_404(listing_id)
