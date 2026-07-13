@@ -33,7 +33,7 @@ export default function Messages() {
   const fetchConversations = async () => {
     setLoading(true)
     try {
-      const res = await axios.get('http://localhost:5000/api/messages/conversations', {
+      const res = await axios.get('https://mobixpk-production.up.railway.app/api/messages/conversations', {
         headers: { Authorization: `Bearer ${token()}` }
       })
       setConversations(res.data.conversations)
@@ -46,7 +46,7 @@ export default function Messages() {
 
   const fetchThread = async () => {
     try {
-      const res = await axios.get(`http://localhost:5000/api/messages/${listingId}/${userId}`, {
+      const res = await axios.get(`https://mobixpk-production.up.railway.app/api/messages/${listingId}/${userId}`, {
         headers: { Authorization: `Bearer ${token()}` }
       })
       setMessages(res.data.messages)
@@ -60,7 +60,7 @@ export default function Messages() {
     if (!newMessage.trim()) return
     setSending(true)
     try {
-      await axios.post('http://localhost:5000/api/messages', {
+      await axios.post('https://mobixpk-production.up.railway.app/api/messages', {
         receiver_id: parseInt(userId),
         listing_id: parseInt(listingId),
         content: newMessage.trim()

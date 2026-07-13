@@ -28,7 +28,7 @@ export default function Browse() {
     try {
       const params = new URLSearchParams()
       Object.entries(filters).forEach(([k, v]) => { if (v) params.set(k, v) })
-      const res = await axios.get(`http://localhost:5000/api/listings?${params}`)
+      const res = await axios.get(`https://mobixpk-production.up.railway.app/api/listings?${params}`)
       setListings(res.data.listings)
     } catch (err) {
       console.error(err)

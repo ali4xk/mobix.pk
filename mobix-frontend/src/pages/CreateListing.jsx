@@ -59,7 +59,7 @@ export default function CreateListing() {
       Object.entries(form).forEach(([k, v]) => formData.append(k, v))
       images.forEach(img => formData.append('images', img))
 
-      const res = await axios.post('http://localhost:5000/api/listings', formData, {
+      const res = await axios.post('https://mobixpk-production.up.railway.app/api/listings', formData, {
         headers: { Authorization: `Bearer ${token}` }
       })
       navigate(`/listing/${res.data.listing_id}`)
