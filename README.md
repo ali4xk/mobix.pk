@@ -114,7 +114,7 @@ npm run dev
 
 ## 👤 Author/Developer:
 
-**Ali** — [@ali4xk](https://github.com/ali4xk)
+**Muhammad Ali** — [@ali4xk](https://github.com/ali4xk)
 
 ---
 
