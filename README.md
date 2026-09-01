@@ -100,10 +100,10 @@ npm run dev
 ## 🗺️ Roadmap
 
 - [x] Project setup & database schema
-- [ ] Flask backend — auth, listings, image upload
-- [ ] React frontend — home, browse, listing detail
-- [ ] User dashboard — create and manage listings
-- [ ] In-app messaging
+- [x] Flask backend — auth, listings, image upload
+- [x] React frontend — home, browse, listing detail
+- [x] User dashboard — create and manage listings
+- [x] In-app messaging
 - [ ] Reviews & reports
 - [ ] Admin panel
 - [ ] IMEI verification & CNIC check
@@ -114,10 +114,10 @@ npm run dev
 
 ## 👤 Author/Developer:
 
-**Ali** — [@ali4xk](https://github.com/ali4xk)
+**Muhammad Ali** — [@ali4xk](https://github.com/ali4xk)
 
 ---
 
 ## 📄 License
 
-This project is open source and available under the [MIT License](LICENSE).
+This project is public for portfolio purposes only. See LICENSE — all rights reserved.
