@@ -8,6 +8,11 @@ import os
 
 load_dotenv()
 
+database_url = os.getenv("DATABASE_URL")
+if database_url and database_url.startswith("postgres://"):
+    database_url = database_url.replace("postgres://", "postgresql://", 1)
+os.environ["DATABASE_URL"] = database_url
+
 db = SQLAlchemy()
 migrate = Migrate()
 jwt = JWTManager()
