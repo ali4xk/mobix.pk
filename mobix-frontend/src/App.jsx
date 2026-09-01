@@ -8,6 +8,7 @@ import Register from './pages/Register'
 import Dashboard from './pages/Dashboard'
 import CreateListing from './pages/CreateListing'
 import Messages from './pages/Messages'
+import HowItWorks from './pages/HowItWorks'
 
 export default function App() {
   return (
@@ -23,6 +24,7 @@ export default function App() {
         <Route path="/create-listing" element={<CreateListing />} />
         <Route path="/messages" element={<Messages />} />
         <Route path="/messages/:listingId/:userId" element={<Messages />} />
+        <Route path="/how-it-works" element={<HowItWorks />} />
       </Routes>
     </>
   )
