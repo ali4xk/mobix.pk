@@ -28,9 +28,9 @@ export default function ListingDetail() {
   const fetchListing = async () => {
     setLoading(true)
     try {
-      const res = await axios.get(`https://mobixpk-production.up.railway.app/api/listings/${id}`)
+      const res = await axios.get(`https://mobix-pk.onrender.com/api/listings/${id}`)
       setListing(res.data)
-      const sellerRes = await axios.get(`https://mobixpk-production.up.railway.app/api/auth/me`, {
+      const sellerRes = await axios.get(`https://mobix-pk.onrender.com/api/auth/me`, {
         headers: { Authorization: `Bearer ${localStorage.getItem('mobix_token')}` }
       })
       setSeller(sellerRes.data)

@@ -27,7 +27,7 @@ export default function Home() {
     setLoading(true)
     try {
       const params = activeCategory ? `?category=${activeCategory}` : ''
-      const res = await axios.get(`https://mobixpk-production.up.railway.app/api/listings${params}`)
+      const res = await axios.get(`https://mobix-pk.onrender.com/api/listings${params}`)
       setListings(res.data.listings)
     } catch (err) {
       console.error(err)

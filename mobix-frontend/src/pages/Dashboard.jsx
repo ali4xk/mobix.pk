@@ -19,7 +19,7 @@ export default function Dashboard() {
     setLoading(true)
     try {
       const token = localStorage.getItem('mobix_token')
-      const res = await axios.get('https://mobixpk-production.up.railway.app/api/listings/my', {
+      const res = await axios.get('https://mobix-pk.onrender.com/api/listings/my', {
         headers: { Authorization: `Bearer ${token}` }
       })
       setListings(res.data.listings)
@@ -34,7 +34,7 @@ export default function Dashboard() {
     if (!window.confirm('Are you sure you want to delete this listing?')) return
     try {
       const token = localStorage.getItem('mobix_token')
-      await axios.delete(`https://mobixpk-production.up.railway.app/api/listings/${id}`, {
+      await axios.delete(`https://mobix-pk.onrender.com/api/listings/${id}`, {
         headers: { Authorization: `Bearer ${token}` }
       })
       setListings(l => l.filter(listing => listing.id !== id))
@@ -46,7 +46,7 @@ export default function Dashboard() {
   const handleMarkSold = async (id) => {
     try {
       const token = localStorage.getItem('mobix_token')
-      await axios.put(`https://mobixpk-production.up.railway.app/api/listings/${id}`,
+      await axios.put(`https://mobix-pk.onrender.com/api/listings/${id}`,
         { status: 'sold' },
         { headers: { Authorization: `Bearer ${token}` } }
       )
